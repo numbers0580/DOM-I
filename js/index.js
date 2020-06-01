@@ -50,14 +50,15 @@ let navLink4 = document.getElementsByTagName('a')[3];
 let navLink5 = document.getElementsByTagName('a')[4];
 let navLink6 = document.getElementsByTagName('a')[5];
 
-navLink1.textContent = siteContent.nav["nav-item-1"];
-navLink2.textContent = siteContent.nav["nav-item-2"];
-navLink3.textContent = siteContent.nav["nav-item-3"];
-navLink4.textContent = siteContent.nav["nav-item-4"];
-navLink5.textContent = siteContent.nav["nav-item-5"];
-navLink6.textContent = siteContent.nav["nav-item-6"];
+navLink1.textContent = siteContent.nav['nav-item-1'];
+navLink2.textContent = siteContent.nav['nav-item-2'];
+navLink3.textContent = siteContent.nav['nav-item-3'];
+navLink4.textContent = siteContent.nav['nav-item-4'];
+navLink5.textContent = siteContent.nav['nav-item-5'];
+navLink6.textContent = siteContent.nav['nav-item-6'];
 
-
+//The following code takes a string and breaks it up to individual words
+//and recombines them using <br> instead
 let domTitleSplit = siteContent.cta.h1.split(' ');
 let domTitleJoined = domTitleSplit[0];
 for(let i = 1; i < domTitleSplit.length; i++) {
@@ -66,15 +67,15 @@ for(let i = 1; i < domTitleSplit.length; i++) {
 let hOne = document.getElementsByTagName('h1')[0];
 hOne.innerHTML = domTitleJoined;
 
-
+//Labeling the button
 let ctaButtonText = document.getElementsByTagName('button')[0];
 ctaButtonText.textContent = siteContent.cta.button;
 
-
+//Getting src for circular-shaped image
 let circleImg = document.getElementById('cta-img');
-circleImg.setAttribute('src', siteContent.cta["img-src"]);
+circleImg.setAttribute('src', siteContent.cta['img-src']);
 
-
+//Again, can't use for-loop due to unique keys. These are for all the <h4>s
 let h4Text1 = document.getElementsByTagName('h4')[0];
 let h4Text2 = document.getElementsByTagName('h4')[1];
 let h4Text3 = document.getElementsByTagName('h4')[2];
@@ -88,3 +89,28 @@ h4Text3.textContent = siteContent['main-content']['services-h4'];
 h4Text4.textContent = siteContent['main-content']['product-h4'];
 h4Text5.textContent = siteContent['main-content']['vision-h4'];
 h4Text6.textContent = siteContent.contact['contact-h4'];
+
+//Same issue with lack of for-loops for the <p> tags
+let pText1 = document.getElementsByTagName('p')[0];
+let pText2 = document.getElementsByTagName('p')[1];
+let pText3 = document.getElementsByTagName('p')[2];
+let pText4 = document.getElementsByTagName('p')[3];
+let pText5 = document.getElementsByTagName('p')[4];
+let pText6 = document.getElementsByTagName('p')[5];
+let pText7 = document.getElementsByTagName('p')[6];
+let pText8 = document.getElementsByTagName('p')[7];
+let pText9 = document.getElementsByTagName('p')[8];
+
+pText1.textContent = siteContent['main-content']['features-content'];
+pText2.textContent = siteContent['main-content']['about-content'];
+pText3.textContent = siteContent['main-content']['services-content'];
+pText4.textContent = siteContent['main-content']['product-content'];
+pText5.textContent = siteContent['main-content']['vision-content'];
+pText6.textContent = siteContent.contact.address;
+pText7.textContent = siteContent.contact.phone;
+pText8.textContent = siteContent.contact.email;
+pText9.textContent = siteContent.footer.copyright;
+
+//Getting src for the middle image
+let midImg = document.getElementById('middle-img');
+midImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
