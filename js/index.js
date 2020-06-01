@@ -114,3 +114,4 @@ pText9.textContent = siteContent.footer.copyright;
 //Getting src for the middle image
 let midImg = document.getElementById('middle-img');
 midImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
