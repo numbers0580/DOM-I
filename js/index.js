@@ -39,4 +39,52 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+//I originally wanted to use querySelectorAll, create an array, then use a for-loop.
+//But I noticed the keys in 'nav' are all unique, so there's no point.
+let navLink1 = document.getElementsByTagName('a')[0];
+let navLink2 = document.getElementsByTagName('a')[1];
+let navLink3 = document.getElementsByTagName('a')[2];
+let navLink4 = document.getElementsByTagName('a')[3];
+let navLink5 = document.getElementsByTagName('a')[4];
+let navLink6 = document.getElementsByTagName('a')[5];
+
+navLink1.textContent = siteContent.nav["nav-item-1"];
+navLink2.textContent = siteContent.nav["nav-item-2"];
+navLink3.textContent = siteContent.nav["nav-item-3"];
+navLink4.textContent = siteContent.nav["nav-item-4"];
+navLink5.textContent = siteContent.nav["nav-item-5"];
+navLink6.textContent = siteContent.nav["nav-item-6"];
+
+
+let domTitleSplit = siteContent.cta.h1.split(' ');
+let domTitleJoined = domTitleSplit[0];
+for(let i = 1; i < domTitleSplit.length; i++) {
+  domTitleJoined = domTitleJoined.concat('<br /> ' + domTitleSplit[i]);
+}
+let hOne = document.getElementsByTagName('h1')[0];
+hOne.innerHTML = domTitleJoined;
+
+
+let ctaButtonText = document.getElementsByTagName('button')[0];
+ctaButtonText.textContent = siteContent.cta.button;
+
+
+let circleImg = document.getElementById('cta-img');
+circleImg.setAttribute('src', siteContent.cta["img-src"]);
+
+
+let h4Text1 = document.getElementsByTagName('h4')[0];
+let h4Text2 = document.getElementsByTagName('h4')[1];
+let h4Text3 = document.getElementsByTagName('h4')[2];
+let h4Text4 = document.getElementsByTagName('h4')[3];
+let h4Text5 = document.getElementsByTagName('h4')[4];
+let h4Text6 = document.getElementsByTagName('h4')[5];
+
+h4Text1.textContent = siteContent['main-content']['features-h4'];
+h4Text2.textContent = siteContent['main-content']['about-h4'];
+h4Text3.textContent = siteContent['main-content']['services-h4'];
+h4Text4.textContent = siteContent['main-content']['product-h4'];
+h4Text5.textContent = siteContent['main-content']['vision-h4'];
+h4Text6.textContent = siteContent.contact['contact-h4'];
