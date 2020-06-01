@@ -115,3 +115,8 @@ pText9.textContent = siteContent.footer.copyright;
 let midImg = document.getElementById('middle-img');
 midImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
+//Task 3 starting here
+let aText = document.querySelectorAll('a');
+aText.forEach(function(linkColor) {
+  linkColor.style.color = 'green';
+});
