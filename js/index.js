@@ -139,3 +139,10 @@ appendedLink.textContent = 'Coming Soon';
 appendedLink.style.color = 'green';
 //I couldn't use the classList example since the class name was in the grandparent tag instead of merely the parent tag
 navArea.appendChild(appendedLink);
+
+//Prepending Child
+let prepentiousLink = document.createElement('a');
+prepentiousLink.href= '#';
+prepentiousLink.textContent = 'Home';
+prepentiousLink.style.color = 'green';
+navArea.prepend(prepentiousLink);
