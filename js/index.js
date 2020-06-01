@@ -59,12 +59,12 @@ navLink6.textContent = siteContent.nav['nav-item-6'];
 
 //The following code takes a string and breaks it up to individual words
 //and recombines them using <br> instead
+let hOne = document.getElementsByTagName('h1')[0];
 let domTitleSplit = siteContent.cta.h1.split(' ');
 let domTitleJoined = domTitleSplit[0];
 for(let i = 1; i < domTitleSplit.length; i++) {
   domTitleJoined = domTitleJoined.concat('<br /> ' + domTitleSplit[i]);
 }
-let hOne = document.getElementsByTagName('h1')[0];
 hOne.innerHTML = domTitleJoined;
 
 //Labeling the button
@@ -101,12 +101,21 @@ let pText7 = document.getElementsByTagName('p')[6];
 let pText8 = document.getElementsByTagName('p')[7];
 let pText9 = document.getElementsByTagName('p')[8];
 
+let contactAddressSplit = siteContent.contact.address.split(' ');
+let contactAddressJoined = contactAddressSplit[0];
+for(let j = 1; j < contactAddressSplit.length; j++) {
+  contactAddressJoined = contactAddressJoined.concat(' ' + contactAddressSplit[j]);
+  if(contactAddressSplit[j] === 'Street') {
+    contactAddressJoined = contactAddressJoined.concat('<br />');
+  }
+}
+
 pText1.textContent = siteContent['main-content']['features-content'];
 pText2.textContent = siteContent['main-content']['about-content'];
 pText3.textContent = siteContent['main-content']['services-content'];
 pText4.textContent = siteContent['main-content']['product-content'];
 pText5.textContent = siteContent['main-content']['vision-content'];
-pText6.textContent = siteContent.contact.address;
+pText6.innerHTML = contactAddressJoined;
 pText7.textContent = siteContent.contact.phone;
 pText8.textContent = siteContent.contact.email;
 pText9.textContent = siteContent.footer.copyright;
@@ -120,3 +129,13 @@ let aText = document.querySelectorAll('a');
 aText.forEach(function(linkColor) {
   linkColor.style.color = 'green';
 });
+
+//Appending Child
+let appendedLink = document.createElement('a');
+//Created this variable to solve a hierarchy problem when appending the child at the end of this code
+let navArea = document.getElementsByTagName('nav')[0];
+appendedLink.href = '#';
+appendedLink.textContent = 'Coming Soon';
+appendedLink.style.color = 'green';
+//I couldn't use the classList example since the class name was in the grandparent tag instead of merely the parent tag
+navArea.appendChild(appendedLink);
